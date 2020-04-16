@@ -1,0 +1,41 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} BD {% endblock %}
+
+
+{% block body %}
+    <style>
+        body {
+        }
+        h1{
+            text-align: center;
+        }
+
+        a{
+            display: block;
+            background-color: #F5F5F5;
+            color: black;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 5px;
+        }
+        a:hover{
+            background-color: #e0e0e0;
+        }
+
+    </style>
+
+    <h1>Usuarios</h1>
+
+    <a href = "{{ path('add_new_usuario') }}" >Add Usuario</a>
+
+    <a href = "{{ path('mostrar_usuario') }}" >Mostrar Usuarios</a>
+
+    <a href = "{{ path('index') }}" >Return</a>
+
+{% endblock %}
+

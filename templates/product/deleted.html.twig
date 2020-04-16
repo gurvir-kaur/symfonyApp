@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}ID{% endblock %}
+
+{% block body %}
+    <h2>Product deleted successfully.</h2>
+
+
+    <a style="
+        display: inline-block;
+        background-color: gainsboro;
+        color: black;
+        margin: 1em;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;"
+       href = "{{ path('listProducts') }}"  >Return</a>
+
+{% endblock %}

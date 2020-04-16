@@ -1,0 +1,32 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} CRUD {% endblock %}
+
+
+{% block body %}
+    <h1>CRUD</h1>
+
+    <a style="
+        display: block;
+        background-color: gainsboro;
+        color: black;
+        padding: 25px;
+        text-align: center;
+        margin: 5px;
+        text-decoration: none;"
+       href = "{{ path('usuario') }}" >Usuarios</a></li>
+
+    <a style="
+        display: block;
+        background-color: gainsboro;
+        color: black;
+        margin: 5px;
+        padding: 25px;
+        text-align: center;
+        text-decoration: none;"
+       href = "{{ path('product') }}" >Products</a>
+
+
+{% endblock %}
+

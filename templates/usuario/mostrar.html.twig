@@ -1,0 +1,90 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} BD {% endblock %}
+
+
+{% block body %}
+
+    <style>
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            margin-bottom: 5px;
+        }
+
+        tr:hover {background-color:#f5f5f5;}
+
+        td, th {
+            border-bottom: 1px solid #000;
+            text-align: center;
+            padding: 5px;
+        }
+
+        td{
+            width: 10%;
+        }
+        th{
+            width: 3%;
+        }
+
+    </style>
+
+    <h1 style="text-align: center">Usuarios</h1>
+
+    {% for usuario in usuario %}
+
+        <table>
+            <tr>
+                <th>ID of the Item</th>
+                <th>User Name</th>
+                <th>User email</th>
+                <th>Password</th>
+                <th colspan="2">Operations</th>
+            </tr>
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.name }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.password }}</td>
+
+                <td><a style="
+        display: inline-block;
+        background-color: #4caf509c;
+        color: black;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;"
+                       href = "{{ path('modify_usuario', {'id':usuario.id}) }}" >Modify user</a>
+                </td>
+                <td>
+                    <a style="
+        display: inline-block;
+        background-color: #ff5722a6;
+        color: black;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;"
+                       href = "{{ path('delete_usuario', {'id':usuario.id} ) }}" >Delete user</a>
+                </td>
+
+            </tr>
+        </table>
+
+    {% endfor %}
+
+    <a style="
+        display: inline-block;
+        background-color: gainsboro;
+        color: black;
+        margin: 1em;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;" href = "{{ path('usuario') }}"  >Return</a>
+
+{% endblock %}
+

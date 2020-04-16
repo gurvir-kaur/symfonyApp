@@ -1,0 +1,54 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }}  {% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('main.css.twig') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+
+    <style>
+        body{
+            padding: 1em;
+            margin-left: 1em;
+        }
+        a, #submit {
+            display: inline-block;
+            background-color: #F5F5F5;
+            color: black;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 5px;
+        }
+        a:hover{
+            background-color: #e0e0e0;
+        }
+
+
+    </style>
+
+    <h1>Add product:</h1>
+
+    <form action="{{ path('add_new_product') }}" method="post">
+
+        Item name: <input type="text" name="name" >
+        <br>
+        <br>
+        Item price: <input type="number" name="price" >
+        <br>
+        <br>
+        Description: <input type="text" name="description" >
+        <br>
+        <br>
+        <input id="submit" type="submit" value="Submit">
+
+        <a href = "{{ path('product') }}"  >Return</a>
+
+    </form>
+{% endblock %}
+
