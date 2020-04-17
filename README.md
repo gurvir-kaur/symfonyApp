@@ -30,6 +30,8 @@ Now let’s check out if our app is running fine:
 
 If everything goes ok then we will see the **"Welcome to symfony"** quote in our browser:
 
+![Welcome](/images/welcome.png)
+
 A common practice when developing Symfony applications is to install packages (Symfony calls them bundles) that provide ready-to-use features.
 
 Composer commands to provide advanced features so let’s run the next two commands:
@@ -41,17 +43,18 @@ Up to this point we have you basic application running. Now our next step will b
  
 ## Doctrine
 
-First, install Doctrine support via the orm Symfony pack, as well as the MakerBundle, which will help generate some code:
+1. First, install Doctrine support via the orm Symfony pack, as well as the MakerBundle, which will help generate some code:
 
  > composer require symfony/orm-pack
  > composer require --dev symfony/maker-bundle
 
 After this step we need to **configure the database**. The database connection information is stored as an environment variable called **DATABASE_URL**. For development, you can find and customize this inside **.env** file:
 
+![.env folder](/images/env.png)
 
 Inside this file (at very bottom) we need to customize the following line:
 
-![Alt Text]()
+![inside-envFolder](/images/database.png)
 	 
 We need to enter the information of our database: user, password and the database name.
 
@@ -59,38 +62,38 @@ for example:
 
 DATABASE_URL="mysql://root:1234@127.0.0.1:3307/symfony"
 
+2. Now let’s create our database:
 
-Now let’s create our database:
+> php bin/console doctrine:database:create
 
-php bin/console doctrine:database:create
+3. Next step is to create an entity class. We can use the make:entity command to create this class and any fields we need. The command will ask us some questions - answer them like done below:
 
-Next step is to create an entity class. We can use the make:entity command to create this class and any fields we need. The command will ask us some questions - answer them like done below:
+![product entity](/images/product.png)
 
+4. The **Product class** is fully-configured and ready to save to a product table. To migrate it we use the next command:
 
-
-The Product class is fully-configured and ready to save to a product table. To migrate it we use the next command:
-
-php bin/console make:migration
+> php bin/console make:migration
 
 
 But what if you need to add a new field property to Product, like a description? You can edit the class to add the new property. But, you can also use make:entity again and fill the information as we did before.
 
 The migration system is smart. It compares all of your entities with the current state of the database and generates the SQL needed to synchronize them! Like before, execute your migrations:
 
-php bin/console doctrine:migrations:migrate
+> php bin/console doctrine:migrations:migrate
 
 And we can see the changes in our database that it has create a table named “product”. This table shows null values for every entity because we haven't saved any values yet.
 
+![Tables in MySQL](/images/tables.png)
 
-
-Persisting Objects to the Database:
+## Persisting Objects to the Database:
 
 It's time to save a Product object to the database! Let's create a new controller to experiment:
 
-php bin/console make:controller ProductController
+> php bin/console make:controller ProductController
 
 And to see the result let’s try it on browser: 127.0.0.1:8000/product
 
+![productTable in browser](/images/product_browser.png)
 
 Now we can start to code our application! 
 
