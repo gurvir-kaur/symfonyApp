@@ -93,7 +93,7 @@ It's time to save a Product object to the database! Let's create a new controlle
 
 And to see the result let’s try it on browser: 127.0.0.1:8000/product
 
-![productTable in browser](/images/product_browser.png)
+![productTable in browser](/images/product_in_browser.png)
 
 Now we can start to code our application! 
 
