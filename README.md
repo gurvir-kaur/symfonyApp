@@ -1,6 +1,6 @@
-![Symfony](https://miro.medium.com/max/951/1*aQZ1bk_fZZFIXm9KYEpdIQ.png) 
+![Symfony_logo](https://lineadecodigo.com/wp-content/uploads/2019/04/symfony.png) 
 
-# Documentation
+# Symfony Documentation
 
 *First of all we need to setup and install the symfony framework.*
 
