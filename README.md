@@ -119,3 +119,10 @@ This made changes to two entities.
 
 - Next, since one Usuario object will relate to many Product objects, the **make:entity** command also added a products property to the Usuario class that will hold these objects:
 
+### The database is setup! Now, let's execute the migrations like normal:
+
+>  php bin/console doctrine:migrations:diff
+
+> php bin/console doctrine:migrations:migrate
+
+Thanks to the relationship, this creates a usuario_id foreign key column on the product table. Doctrine is ready to persist our relationship!
