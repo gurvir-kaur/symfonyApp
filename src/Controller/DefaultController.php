@@ -9,6 +9,8 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route("/default", name="default")
+     *
+     * I used this controller to create homepage
      */
     public function index()
     {
