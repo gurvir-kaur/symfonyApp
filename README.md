@@ -1,6 +1,6 @@
-![Symfony_logo](https://images.opencollective.com/symfony-diversity-usd/c5ebd37/logo/256.png) 
+![Symfony_logo](/images/logo.png) 
 
-# Symfony Documentation
+# Documentation
 
 *First of all we need to setup and install the symfony framework.*
 
