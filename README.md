@@ -1,4 +1,4 @@
-![Symfony_logo](https://lineadecodigo.com/wp-content/uploads/2019/04/symfony.png) 
+![Symfony_logo](https://images.opencollective.com/symfony-diversity-usd/c5ebd37/logo/256.png) 
 
 # Symfony Documentation
 
