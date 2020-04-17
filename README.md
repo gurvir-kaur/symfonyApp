@@ -97,3 +97,10 @@ And to see the result let’s try it on browser: 127.0.0.1:8000/product
 
 Now we can start to code our application! 
 
+
+# Doctrine Associations / Relations
+
+## Introduction
+> In my application I've created two tables: Product and Usuario (User). With this I want that each Usuario (User) can be associated with many products. But, each product can be associated with only one User. This relationship can be summarized as: many products to one User (or equivalently, one User to many products).
+
+From the perspective of the Product entity, this is a **many-to-one relationship**. From the perspective of the Product entity, this is a **one-to-many** relationship.
