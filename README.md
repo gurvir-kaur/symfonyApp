@@ -102,5 +102,20 @@ Now we can start to code our application!
 
 ## Introduction
 > In my application I've created two tables: Product and Usuario (User). With this I want that each Usuario (User) can be associated with many products. But, each product can be associated with only one User. This relationship can be summarized as: many products to one User (or equivalently, one User to many products).
+> From the perspective of the Product entity, this is a **many-to-one relationship**. From the perspective of the Product entity, this is a **one-to-many** relationship.
 
-From the perspective of the Product entity, this is a **many-to-one relationship**. From the perspective of the Product entity, this is a **one-to-many** relationship.
+### To map this:
+
+1. First let's create a *usuario* property on the Product class with the ManyToOne annotation. We can do this by hand, or by using the **make:entity** command, which will ask you several questions about your relationship. If you're not sure of the answer, don't worry! You can always change the settings later:
+
+![First image of while creating usuarui property in Class Product](/images/entity_product.png)
+
+![Second Image of while creating usuarui property in Class Product](/images/entity_product.png)
+
+This made changes to two entities. 
+- First, it added a new *usuario* property to the Product entity (and getter & setter methods):
+
+> This ManyToOne mapping tells Doctrine to use the *usuario_id* column on the product table to relate each record in that table with a record in the Usuario table.
+
+- Next, since one Usuario object will relate to many Product objects, the **make:entity** command also added a products property to the Usuario class that will hold these objects:
+
