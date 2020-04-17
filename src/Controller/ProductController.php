@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,37 +21,51 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route ("add_product", name="add_product")
+     * @Route ("add_product/{id}", name="add_product")
      *
      */
-    public function add_product()
+    public function add_product($id)
     {
-        $action = $this->generateUrl('add_new_product');
-        return $this->render('product/form.html.twig', ['action' => $action]);
+
+        $usuario = $this->getDoctrine() ->getRepository(Usuario::class) ->find($id);
+        return $this->render('product/form.html.twig',
+            [
+                'usuario' => $usuario,
+            ]
+        );
+
     }
 
     /**
-     * @Route ("add_new_product", name="add_new_product")
+     * @Route ("add_new_product/{id}", name="add_new_product")
      *
      */
-    public function addNewProduct(Request $request)
+    public function addNewProduct(Request $request, $id)
     {
+
+        $usuario = $this->getDoctrine() ->getRepository(Usuario::class) ->find($id);
 
         $name =$request->request->get('name');
         $price =$request->request->get('price');
         $description =$request->request->get('description');
+
 
         // creates an object of product and initializes some data for this example
         $product = new Product();
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
+
+        // relates this product to the category
+        $product->setUsuario($usuario);
+
         $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($usuario);
         $entityManager->persist($product);
         $entityManager->flush();
 
         //this return shows the new product added
-        return $this->render('product/index.html.twig');
+        return $this->render('usuario/index.html.twig');
     }
 
     /**

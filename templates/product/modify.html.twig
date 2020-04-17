@@ -32,10 +32,14 @@
     </style>
 
     <h1>Write the new values for the product $id </h1>
+    <h3 style="color: red">You can't change the User name!</h3>
 
     <form action="{{ path('modifiedProduct',{'id':product.id} ) }}" method="post">
 
         Product id: <input type="number" name="name" value="{{ product.id }}">
+        <br>
+        <br>
+        User name: <input type="text" name="name" value="{{ product.usuario.name }}">
         <br>
         <br>
         Product name: <input type="text" name="name" value="{{ product.name }}">
