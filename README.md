@@ -110,7 +110,7 @@ Now we can start to code our application!
 
 ![First image of while creating usuarui property in Class Product](/images/entity_product.png)
 
-![Second Image of while creating usuarui property in Class Product](/images/entity_product.png)
+![Second Image of while creating usuarui property in Class Product](/images/entity_product2.png)
 
 This made changes to two entities. 
 - First, it added a new *usuario* property to the Product entity (and getter & setter methods):
