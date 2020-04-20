@@ -126,3 +126,8 @@ This made changes to two entities.
 > php bin/console doctrine:migrations:migrate
 
 Thanks to the relationship, this creates a usuario_id foreign key column on the product table. Doctrine is ready to persist our relationship!
+
+I have modified the methods/functions of class product so that when a product is created a User should be filled. That's it. 
+
+### Thank you!
+
